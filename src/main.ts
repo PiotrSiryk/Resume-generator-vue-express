@@ -9,6 +9,7 @@ import { aliases, mdi } from "vuetify/iconsets/mdi";
 import App from "./App.vue";
 import router from "./router/router";
 import "@mdi/font/css/materialdesignicons.css";
+import "@/styles/globalStyles.scss";
 
 const vuetify = createVuetify({
   components,

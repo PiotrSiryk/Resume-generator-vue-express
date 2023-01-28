@@ -1,9 +1,16 @@
 <template>
-  <RouterView />
+  <main class="main-app">
+    <RouterView />
+  </main>
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 </script>
 
-<style scoped></style>
+<style scoped>
+main.main-app {
+  width: 100%;
+  height: 100%;
+}
+</style>
