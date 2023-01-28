@@ -2,7 +2,7 @@ import ResumeListVue from "@/views/ResumeList.vue";
 import MainView from "@/views/MainView.vue";
 import type { RouteRecordRaw } from "vue-router";
 
-enum ResumeNames {
+export enum ResumeNames {
   Main = "Main",
   ResumeList = "ResumeList",
 }
