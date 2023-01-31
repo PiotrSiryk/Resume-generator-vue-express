@@ -1,3 +1,11 @@
-<template><div>dddddddd</div></template>
-<script lang="ts" setup></script>
+<template>
+  <div>
+    <v-btn @click="createNewResume">Add new resume</v-btn>
+  </div>
+</template>
+<script lang="ts" setup>
+function createNewResume() {
+  //
+}
+</script>
 <style lang="scss"></style>
