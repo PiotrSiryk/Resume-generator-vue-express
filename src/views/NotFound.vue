@@ -8,10 +8,10 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { ResumeNames } from "@/router/resumes.routes";
 import router from "@/router/router";
-
 function goToMain() {
-  // router.push({})
+  router.push({ name: ResumeNames.Main });
 }
 </script>
 <style lang="scss">
