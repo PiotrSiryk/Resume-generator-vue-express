@@ -1,4 +1,4 @@
-import ResumeListVue from "@/views/resumeList/ResumeList.vue";
+import ResumeList from "@/views/resumeList/ResumeList.vue";
 import MainView from "@/views/MainView.vue";
 import type { RouteRecordRaw } from "vue-router";
 
@@ -16,7 +16,7 @@ const resumesRoutes: RouteRecordRaw[] = [
   {
     path: "/resumeList",
     name: ResumeNames.ResumeList,
-    component: ResumeListVue,
+    component: ResumeList,
   },
 ];
 
