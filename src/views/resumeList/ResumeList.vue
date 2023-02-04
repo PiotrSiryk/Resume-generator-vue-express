@@ -4,6 +4,8 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { Resume } from "@/models/resume";
+
 function createNewResume() {
   //
 }

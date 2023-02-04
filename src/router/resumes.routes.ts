@@ -1,4 +1,4 @@
-import ResumeListVue from "@/views/ResumeList.vue";
+import ResumeListVue from "@/views/resumeList/ResumeList.vue";
 import MainView from "@/views/MainView.vue";
 import type { RouteRecordRaw } from "vue-router";
 
