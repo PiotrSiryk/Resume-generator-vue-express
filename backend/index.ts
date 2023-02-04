@@ -11,16 +11,6 @@ const app: Express = express();
 const prisma = new PrismaClient();
 const port = process.env.PORT;
 
-async function testConnection() {
-  const resume = new Resume();
-  resume.name = `name-${Math.random() * 100000}`;
-  resume.saveResumeToDb();
-}
-
-testConnection().finally(async () => {
-  await prisma.$disconnect();
-});
-
 /* app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
