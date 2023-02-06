@@ -1,6 +1,6 @@
 import prisma from "@/client";
 
-export class Resume {
+export class ResumeModel {
   id: string = "";
   name: string = "";
   async saveResumeToDb() {

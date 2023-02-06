@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import { PrismaClient } from "@prisma/client";
-import { Resume } from "./src/models/resumeModel";
+import { ResumeModel } from "./src/models/resumeModel";
 
 dotenv.config();
 
