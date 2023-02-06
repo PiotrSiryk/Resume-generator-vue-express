@@ -14,3 +14,9 @@ model Resume {
   id   Int    @id @default(autoincrement())
   name String
 }
+
+model Users {
+  id       Int    @id @default(autoincrement())
+  name     String
+  password String
+}
