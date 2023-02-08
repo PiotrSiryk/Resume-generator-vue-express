@@ -1,9 +1,15 @@
 <template>
-  <v-form ref="form">
+  <form ref="form" @submit.prevent="submit">
     <slot></slot>
-  </v-form>
+  </form>
 </template>
 
 <script setup lang="ts">
-defineExpose({ test: "ddd" });
+const emit = defineEmits<{
+  (event: "submitForm"): void;
+}>();
+
+function submit(e: any) {
+  emit("submitForm");
+}
 </script>
