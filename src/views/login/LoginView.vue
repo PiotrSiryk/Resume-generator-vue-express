@@ -31,10 +31,10 @@ const { handleSubmit, handleReset } = useForm({
       }
     },
     password(value: string) {
-      if (value?.length >= 7) {
+      if (value?.length >= 4) {
         return true;
       } else {
-        return "Name needs to be at least 7 characters.";
+        return "Name needs to be at least 4 characters.";
       }
     },
   },
