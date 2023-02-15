@@ -2,6 +2,6 @@ export class UserModel {
   id = "";
   email = "";
   password = "";
-  createdAt = "";
-  updatedAt = "";
+  createdAt = new Date();
+  updatedAt = new Date();
 }

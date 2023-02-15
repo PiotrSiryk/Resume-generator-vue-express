@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import prisma from "@/client";
 import { UserModel } from "@/models/userModel";
+import { User } from "@prisma/client";
 
 export function findUserByEmail(email: string) {
   return prisma.user.findUnique({
@@ -9,12 +10,17 @@ export function findUserByEmail(email: string) {
     },
   });
 }
-export function findUserById(id: string) {
-  return prisma.user.findUnique({
+export async function findUserById(id: string): Promise<User | undefined> {
+  const user = await prisma.user.findUnique({
     where: {
       id,
     },
   });
+  if (user) {
+    return user;
+  } else {
+    return undefined;
+  }
 }
 
 export function createUser(user: UserModel) {

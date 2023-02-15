@@ -1,4 +1,5 @@
 import { UserModel } from "@/models/userModel";
+import { generateRefreshToken } from "@/services/jwt.service";
 import { createUser, findUserById } from "@/services/users.service";
 import express from "express";
 import { v4 as uuidv4 } from "uuid";
@@ -24,6 +25,8 @@ router.post(AuthRoutes.Register, async (req, res, next) => {
     }
 
     const newUser = await createUser(body);
+    const jti = uuidv4();
+    const { accessToken, refreshToken } = generateRefreshToken(newUser, jti);
   } catch (error) {
     //
   }

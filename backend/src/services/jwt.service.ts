@@ -1,5 +1,7 @@
 import * as jwt from "jsonwebtoken";
 import crypto from "crypto";
+import { UserModel } from "@/models/userModel";
+import { v4 as uuidv4 } from "uuid";
 
 export function generateAccessToken(user: any) {
   if (process.env.JWT_ACCESS_SECRET) {
@@ -9,7 +11,7 @@ export function generateAccessToken(user: any) {
   }
 }
 
-export function generateRefreshToken(user: any, jti: any) {
+export function generateRefreshToken(user: UserModel, jti: string) {
   if (process.env.JWT_REFRESH_SECRET) {
     return jwt.sign(
       {
