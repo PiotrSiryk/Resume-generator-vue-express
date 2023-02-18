@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 app.use("/auth", authRouter);
 const port = process.env.PORT;
 
-/* axios
+axios
   .post(
-    "http://localhost:3000/auth/register/",
+    "http://localhost:3000/auth/login/",
     {
       email: "name@test.com",
       password: "12345678",
@@ -27,7 +27,7 @@ const port = process.env.PORT;
   )
   .then((data) => {
     console.log(data.data);
-  }); */
+  });
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:3000`);
