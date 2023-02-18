@@ -1,7 +1,7 @@
 import prisma from "@/client";
 import { hashToken } from "./jwt.service";
 
-function addRefreshTokenToWhitelist({
+export function addRefreshTokenToWhitelist({
   jti,
   refreshToken,
   userId,
@@ -15,6 +15,36 @@ function addRefreshTokenToWhitelist({
       id: jti,
       hashedToken: hashToken(refreshToken),
       userId,
+    },
+  });
+}
+
+export function findRefreshTokenById(id: string) {
+  return prisma.refreshToken.findUnique({
+    where: {
+      id,
+    },
+  });
+}
+
+export function deleteRefreshToken(id: string) {
+  return prisma.refreshToken.update({
+    where: {
+      id,
+    },
+    data: {
+      revoked: true,
+    },
+  });
+}
+
+export function revokeTokens(userId: string) {
+  return prisma.refreshToken.updateMany({
+    where: {
+      userId,
+    },
+    data: {
+      revoked: true,
     },
   });
 }

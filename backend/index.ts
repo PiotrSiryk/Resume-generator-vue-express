@@ -1,26 +1,34 @@
-import express, { Express, Request, Response } from "express";
-import expressSession from "express-session";
+import express, { Express } from "express";
 import dotenv from "dotenv";
-import { PrismaClient } from "@prisma/client";
-import { ResumeModel } from "./src/models/resumeModel";
-/* import jsonWebToken from "jsonwebtoken";
-const jwt = require('jsonwebtoken'); */
+import { authRouter } from "@/routes/auth.routes";
+import axios from "axios";
+import cors from "cors";
+import bodyParser from "body-parser";
 
 dotenv.config();
 
 process.env.PORT = "3000";
-
 const app: Express = express();
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-const prisma = new PrismaClient();
+app.use("/auth", authRouter);
 const port = process.env.PORT;
-const session = expressSession();
-// const jwt = new jsonWebToken();
 
-/* app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
-});
+/* axios
+  .post(
+    "http://localhost:3000/auth/register/",
+    {
+      email: "name@test.com",
+      password: "12345678",
+    },
+    { headers: { "Content-Type": "application/json" } }
+  )
+  .then((data) => {
+    console.log(data.data);
+  }); */
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:3000`);
-}); */
+});
