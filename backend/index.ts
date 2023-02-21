@@ -25,8 +25,14 @@ axios
     },
     { headers: { "Content-Type": "application/json" } }
   )
-  .then((data) => {
-    console.log(data.data);
+  .then((response) => {
+    axios.post(
+      "http://localhost:3000/auth/refreshToken/",
+      {
+        refreshToken: response.data.refreshToken,
+      },
+      { headers: { "Content-Type": "application/json" } }
+    );
   });
 
 app.listen(port, () => {
